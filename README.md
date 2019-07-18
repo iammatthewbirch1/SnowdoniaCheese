@@ -2,11 +2,11 @@
 Here is my submission for the Snowdonia Cheese website designed by e3creative. 
 I chose to do the 'Desktop 3' layout, as I felt as though I could demonstrate more development knowledge with it's form-factor.
 
-## Instructions
-# Option 1 (testing)
+# Instructions
+## Option 1 (testing)
 Download Zip, which will include both src and dist folders, usually I would gitignore the dist, however I wanted to make this easier for initial setup.\
 Decompress and open index.html in Chrome.
-# Option 2 (development)
+## Option 2 (development)
 To clone the file\
 	Run: `git clone https://github.com/iammatthewbirch1/SnowdoniaCheese.git`\
 Delete the dist folder and then open command prompt on the file path and install the package dependencies\
