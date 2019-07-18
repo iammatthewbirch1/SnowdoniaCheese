@@ -1,0 +1,32 @@
+{
+  "name": "snowdoniacheese",
+  "version": "1.0.0",
+  "description": "e3creative developer test",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iammatthewbirch1/SnowdoniaCheese.git"
+  },
+  "author": "Matthew Birch",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iammatthewbirch1/SnowdoniaCheese/issues"
+  },
+  "homepage": "https://github.com/iammatthewbirch1/SnowdoniaCheese#readme",
+  "dependencies": {
+    "auto-prefixer": "^0.4.2",
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-imagemin": "^6.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.2",
+    "gulp-watch": "^5.0.1"
+  },
+  "devDependencies": {
+    "braces": "^3.0.2"
+  }
+}
