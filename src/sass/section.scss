@@ -1,0 +1,28 @@
+.section {
+    height: calc(100% - 50px);
+}
+
+#section-1{
+    .title-wrapper {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 100%;
+        height: auto;
+        .title{
+            text-align: center;
+            font-family: 'Cinzel', serif;
+            color: white;
+        }
+    }
+    p {    
+        position: absolute;
+        bottom: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: white;
+        text-align: center;
+        line-height: 2;
+    }
+}

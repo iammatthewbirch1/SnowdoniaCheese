@@ -1,0 +1,41 @@
+$imgWidth: 80px;
+$navHeight: 50px;
+nav {
+    margin-top: 30px;
+    height: $navHeight;
+    display: flex;
+    ul li a {
+        color: white;
+        font-weight: 700;
+    }
+    .left-ul{
+        display: flex;
+        justify-content: flex-start;
+        list-style: none;
+        padding: 0px;
+        margin: 0px;
+        width: calc(50% - #{$imgWidth / 2});
+        li{
+            padding: 4%;
+        }
+    }
+
+    img {
+        width: $imgWidth;
+        height: $imgWidth;
+        transform: translateY(#{($navHeight - $imgWidth)/2});
+    }
+
+    
+    .right-ul{
+        display: flex;
+        justify-content: flex-end;
+        list-style: none;
+        padding: 0px;
+        margin: 0px;
+        width: calc(50% - #{$imgWidth / 2});
+        li{
+            padding: 4%;
+        }
+    }
+}

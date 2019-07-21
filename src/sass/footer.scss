@@ -1,0 +1,25 @@
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    div {
+        display: flex;
+        margin-right: 2%;
+
+        div {
+            padding: 0 10px;
+        }
+    }
+
+    p {
+        color: white;
+        text-decoration: underline;
+        font-weight: 700;
+        font-family: Arial;
+        margin-left: 2%;
+        padding-bottom: 15px;
+    }
+}
