@@ -1,9 +1,9 @@
-$imgWidth: 80px;
-$navHeight: 50px;
+@import 'variables';
+
 nav {
-    margin-top: 30px;
-    height: $navHeight;
     display: flex;
+    height: $navHeight;
+    margin-top: 30px;
     ul li a {
         color: white;
         font-weight: 700;
