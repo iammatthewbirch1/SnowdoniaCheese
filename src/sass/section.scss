@@ -103,3 +103,52 @@
         line-height: 1.8;
     }
 }
+
+
+#section-3 {
+    .text-wrapper {
+        position: absolute;
+        top: 55%;
+        left: 40%;
+        max-width: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .picture-wrap {    
+        position: absolute;
+        top: 55%;
+        right: 31%;
+        max-width: 50%;
+        transform: translate(50%, -50%);
+        img {
+            max-width: 502px;
+            width: 100%;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 100%;    
+            background: rgba(0, 0, 0, 0.23);
+        }
+    }
+
+    h1 {
+        color: white;
+        font-size: 50px;
+        line-height: 1.5;
+    }
+
+    .section-title {
+        color: #A68C24;
+        font-size: 14px;
+    }
+
+    p {
+        padding-left: 35px;
+        color: white;
+        width: 100%;
+        max-width: 500px;
+        line-height: 1.8;
+    }
+}

@@ -9,27 +9,12 @@
     <title>Snowdonia Cheese</title>
 </head>
 <body>
-        <div class="background">
-            <img src="dist/img/snowdoniaBG.png" alt="">
-        </div>
+    <div class="background">
+        <img id="backgroundIMG" src="dist/img/snowdoniaBG.png" alt="">
+    </div>
 
-        <div class="background-overlay"></div>
+    <div class="background-overlay"></div>
     <div class="user-view">
-        
-        <nav class="desktop-nav">
-            <ul class="left-ul">
-                <li><a href="#">Story</a></li>
-                <li><a href="#">Shop</a></li>
-                <li><a href="#">News</a></li>
-                <li><a href="#">Recipes</a></li>
-            </ul>
-            <img src="dist/img/sm-logo.png" alt="small logo">
-            <ul class="right-ul">
-                <li><a href="#">Find a Stockist</a></li>
-                <li><a href="#">Account</a></li>
-                <li><a href="#">Basket <span class="basketCount">0</span></a></li>
-            </ul>
-        </nav>
         <div class="section-wrapper">
             <div id="section-1" class="section active">
                 <div class="title-wrapper">
@@ -54,7 +39,18 @@
                 </div>
             </div>
             <div id="section-3" class="section inactiveRight">
-
+                <div class="picture-wrap">
+                    <img src="dist/img/cheeseSelection.png" alt="Selection of our cheeses">
+                    <div class="overlay"></div>
+                </div>
+                <div class="text-wrapper">
+                    <h1 class="section-title">Our Journey</h1>
+                    <h1>Known all <br/>  around world</h1>
+                    <p>
+                        We nurture cheese brought down from the valley, and with the finest ingredients and care, 
+                        we produce our range of delicious award-winning truckles.  
+                    </p>
+                </div>
             </div>
             <div id="section-4" class="section inactiveRight">
 
@@ -63,6 +59,20 @@
 
             </div>
         </div>
+        <nav class="desktop-nav">
+            <ul class="left-ul">
+                <li><a href="#">Story</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">Recipes</a></li>
+            </ul>
+            <img src="dist/img/sm-logo.png" alt="small logo">
+            <ul class="right-ul">
+                <li><a href="#">Find a Stockist</a></li>
+                <li><a href="#">Account</a></li>
+                <li><a href="#">Basket <span class="basketCount">0</span></a></li>
+            </ul>
+        </nav>
         <footer>
             <p> <span class="findIcon"><img src="dist/img/markerIcon.png" alt="map marker icon"></span>  Find a stockist near you</p>
             <div class="social-media">
@@ -79,5 +89,6 @@
         </footer>
     </div>
 </body>
+<script src="dist/js/swipe.js"></script>
 <script src="dist/js/section.js"></script>
 </html>

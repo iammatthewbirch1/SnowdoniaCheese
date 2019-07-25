@@ -48,6 +48,7 @@ gulp.task('dev', gulp.parallel('browser-sync', 'scss', 'nouglify', 'compress'), 
   gulp.watch('src/js/*.js', ['nouglify']);
   gulp.watch('src/img/*', ['compress'])
   gulp.watch("*.html").on('change', browserSync.reload);
+  return;
 });
 
 gulp.task('default', gulp.parallel('browser-sync', 'scss', 'uglify', 'compress'), function(){
@@ -55,5 +56,6 @@ gulp.task('default', gulp.parallel('browser-sync', 'scss', 'uglify', 'compress')
     gulp.watch('src/js/*.js', ['uglify']);
     gulp.watch('src/img/*', ['compress'])
     gulp.watch("*.html").on('change', browserSync.reload);
+    return;
   });
   
