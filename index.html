@@ -16,6 +16,7 @@
     <div class="background-overlay"></div>
     <div class="user-view">
         <div class="section-wrapper">
+            <!-- Landing page -->
             <div id="section-1" class="section active">
                 <div class="title-wrapper">
                     <h1 class="title">Snowdonia Cheese Company®</h1>
@@ -23,6 +24,7 @@
 
                 <p>Scroll to find out where we came from and <br/> who we now are as a company.</p>
             </div>
+            <!--  Our Origins -->
             <div id="section-2" class="section inactiveRight">
                 <div class="picture-wrap">
                     <img src="dist/img/landscape-picture.png" alt="Tryfan and Llyn Ogwen Landscape">
@@ -38,6 +40,7 @@
                     </p>
                 </div>
             </div>
+            <!-- Our Journey -->
             <div id="section-3" class="section inactiveRight">
                 <div class="picture-wrap">
                     <img src="dist/img/cheeseSelection.png" alt="Selection of our cheeses">
@@ -52,14 +55,60 @@
                     </p>
                 </div>
             </div>
+            <!-- Our Pedigree -->
             <div id="section-4" class="section inactiveRight">
+                <div class="picture-wrap">
+                    <img src="dist/img/tablePresentation.png" alt="A table presentation of our Black Bomber® and pancakes">
+                    <div class="overlay"></div>
+                </div>
 
+                <div class="left-text-wrap">
+                    <p>
+                        We began our journey selling cheese at UK farmers markets and the response was immediately 
+                        astounding. Within months the cheese had made its way into fine-food delicatessens and luxury 
+                        grocers. Snowdonia Cheese Company® cheese now appears in the most upscale retailers stores and 
+                        at the most prestigious events.
+                    </p>
+                    <button>View</button>
+                </div>
+            
+                <div class="right-text-wrap">
+                    <h1 class="section-title">Our Pedigree</h1>
+                    <h1>Multi award <br/> winning</h1>
+                    <p>
+                        Where Cheddars are concerned, our multi-award winning Little Black Bomber® is a modern classic. 
+                        Our flagship cheese marries a delicious rich flavour with a smooth creaminess, lasting long on 
+                        the palate but remaining demandingly moreish!
+                    </p>
+                </div>
             </div>
+            <!-- Discover our range -->
             <div id="section-5" class="section inactiveRight">
+                <div class="left-col col">
+                    <div class="content-wrap">
+                        <div class="img-wrap">
+                            <img src="dist/img/tablePresentation2.png" alt="A presentation of a wrap and our Black Bomber®">
+                        </div>
+                        <div class="text-wrap">
+                            <p>
+                                Black Bomber® has won awards at The Great British Cheese Awards, Nantwich International 
+                                Cheese Awards, the World Cheese Awards and a Super Gold at Mondial Fromage in France.
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="vertical-split"></div>
+
+                <div class="right-col col">
+                    <div class="text-wrap">
+                        <h1>Discover our range</h1>
+                        <button>Discover our range</button>
+                    </div>
+                </div>
             </div>
         </div>
-        <nav class="desktop-nav">
+        <nav id="nav">
             <ul class="left-ul">
                 <li><a href="#">Story</a></li>
                 <li><a href="#">Shop</a></li>
@@ -72,6 +121,12 @@
                 <li><a href="#">Account</a></li>
                 <li><a href="#">Basket <span class="basketCount">0</span></a></li>
             </ul>
+            <div id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
         <footer>
             <p> <span class="findIcon"><img src="dist/img/markerIcon.png" alt="map marker icon"></span>  Find a stockist near you</p>
@@ -91,4 +146,5 @@
 </body>
 <script src="dist/js/swipe.js"></script>
 <script src="dist/js/section.js"></script>
+<script src="dist/js/nav.js"></script>
 </html>

@@ -1,3 +1,39 @@
+@mixin title-sml {
+    color: #A68C24;
+    font-size: 14px;
+    font-family: Cinzel;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+@mixin title-lrg {
+    color: white;
+    font-size: 50px;
+    line-height: 1.5;
+}
+
+@mixin content-style {
+    padding-left: 35px;
+    color: white;
+    width: 100%;
+    max-width: 500px;
+    line-height: 1.8;
+}
+
+@mixin button {
+    background: none;
+    border: solid 1px #A68C24;
+    color: white;
+    padding: 10px;
+    min-width: 130px;
+    transition: all 0.5s;
+    &:hover, &:active {
+        background: #141414;
+        color: #A68C24;
+    }
+}
+
+
 .section-wrapper {
     position: absolute;
     top: 0;
@@ -23,11 +59,7 @@
         left: -100%;
     }
     .section-title {
-        color: #A68C24;
-        font-size: 14px;
-        font-family: Cinzel;
-        font-weight: 600;
-        text-transform: uppercase;
+        @include title-sml;
     }
 }
 
@@ -45,7 +77,8 @@
             color: white;
         }
     }
-    p {    
+
+    p {
         position: absolute;
         bottom: 100px;
         left: 50%;
@@ -85,22 +118,16 @@
     }
 
     h1 {
-        color: white;
-        font-size: 50px;
-        line-height: 1.5;
+        @include title-lrg;
     }
 
     .section-title {
-        color: #A68C24;
-        font-size: 14px;
+        @include title-sml;
     }
 
+
     p {
-        padding-left: 35px;
-        color: white;
-        width: 100%;
-        max-width: 500px;
-        line-height: 1.8;
+        @include content-style;
     }
 }
 
@@ -134,21 +161,125 @@
     }
 
     h1 {
-        color: white;
-        font-size: 50px;
-        line-height: 1.5;
+        @include title-lrg;
     }
 
     .section-title {
-        color: #A68C24;
-        font-size: 14px;
+        @include title-sml;
     }
 
     p {
-        padding-left: 35px;
-        color: white;
-        width: 100%;
-        max-width: 500px;
-        line-height: 1.8;
+        @include content-style;
+    }
+}
+
+#section-4 {
+    .left-text-wrap {
+        position: absolute;
+        top: 40%;
+        left: 1%;
+        max-width: 50%;
+        transform: translateY(-50%);
+    }
+    
+    .right-text-wrap {    
+        position: absolute;
+        top: 70%;
+        right: 5%;
+        max-width: 50%;
+        transform: translateY(-50%);
+    }
+
+    .picture-wrap {    
+        position: absolute;
+        top: 40%;
+        right: 50%;
+        max-width: 50%;
+        transform: translate(50%, -50%);
+        img {
+            max-width: 502px;
+            width: 100%;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 100%;    
+            background: rgba(0, 0, 0, 0.23);
+        }
+    }
+
+    h1 {
+        @include title-lrg;
+    }
+
+    .section-title {
+        @include title-sml;
+    }
+
+    p {
+        @include content-style;
+    }
+
+    button {
+        @include button;
+    }
+}
+
+#section-5 {
+    display: flex;
+    .col {
+        width: 50%;
+        height: 100%;
+        position: relative;
+    }
+    .left-col {
+        .content-wrap {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            width: 100%;
+            padding: 0px 7%;
+            .img-wrap {
+                text-align: center;
+                img {
+                    max-width: 100%;
+                }
+            }
+            .text-wrap {
+                margin-top: 25px;
+                p {
+                    @include content-style;
+                }
+            }
+        }
+    }
+
+    .vertical-split {
+        position: absolute;
+        width: 1px;
+        height: 50%;
+        background: #495358;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .right-col {
+        .text-wrap {            
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            button {
+                @include button;
+            }
+            h1 {
+                @include title-lrg;
+            }
+        }
     }
 }
