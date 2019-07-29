@@ -283,3 +283,90 @@
         }
     }
 }
+
+// Mobile responsive adjustments
+@media only screen and (max-width: 600px) {
+    #section-2 {
+        .text-wrapper {
+            max-width: 90%;
+            top: 50%;
+            left: 5%;
+            transform: translateY(-34%);
+        }
+        h1 {
+            line-height: 1;
+        }
+        p {
+            padding-left: 0;
+            width: 100%;
+            line-height: 1.4;
+        }
+        .picture-wrap {
+            top: 110px;
+            right: 5%;
+            max-width: 90%;
+            transform: none;
+            .overlay {
+                background: rgba(0, 0, 0, 0.4);
+            }
+        }
+    }
+
+    #section-3 {
+        .text-wrapper {
+            top: 55%;
+            left: 5%;
+            max-width: 90%;
+            transform: translateY(-50%);
+        }
+        .picture-wrap {
+            right: 39%;
+            max-width: 70%;
+        }
+    }
+
+    #section-4 {
+        .left-text-wrap {
+            top: 36%;
+            left: 5%;
+            width: 90%;
+            max-width: none;
+            transform: translateY(-50%);
+        }
+        .right-text-wrap {
+            top: 73%;
+            right: 5%;
+            width: 90%;
+            max-width: none;
+            transform: translateY(-50%);
+            .section-title {
+                margin: 0;
+                font-size: 14px;
+            }
+            h1 {
+                font-size: 34px;
+                line-height: 1;
+            }
+        }
+        .picture-wrap {
+            top: 59%;
+            right: 29%;
+            max-width: 50%;
+            transform: translate(50%, -50%);
+        }
+        
+        p {
+            padding: 0;
+            line-height: 1.1;
+        }
+    }
+
+    #section-5 {
+        .right-col .text-wrap h1 {
+            font-size: 35px;
+        }
+        .left-col .content-wrap .text-wrap p {
+            padding: 0;
+        }
+    }
+}
