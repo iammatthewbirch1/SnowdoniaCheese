@@ -1,67 +1,106 @@
 // const gulp = require('gulp');
-const { src, dest, parallel, watch } = require('gulp');
+const { src, dest, parallel, watch, series } = require('gulp');
 const sass = require('gulp-sass');
+const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
 // const watch = require('gulp-watch'); 
 const autoprefixer = require('gulp-autoprefixer');
 const imagemin = require('gulp-imagemin');
-const browserSync = require('browser-sync').create();
+const browserSync = require('browser-sync');
+const del = require('del')
+
+const server = browserSync.create();
+
+const files = {
+  src : {
+    scss: 'src/sass/*.scss',
+    js: 'src/js/*.js',
+    img: 'src/img/*'
+  },
+  dist : {
+    scss: 'dist/css',
+    js: 'dist/js',
+    img: 'dist/img'
+  }
+}
+
+const cleanCSS = () => del(['dist/css']);
+const cleanJS = () => del(['dist/css']);
+const cleanIMG = () => del(['dist/css']);
 
 function _scss() {
-  return src('src/sass/*.scss')
+  cleanCSS();
+  return src(files.src.scss)
     .pipe(sass())
     .pipe(autoprefixer())
-    .pipe(dest('dist/css'))
-    .pipe(browserSync.stream());
+    .pipe(dest(files.dist.scss));
 }
 
 function _uglify() {
-  return src('src/js/*.js')
+  cleanJS();
+  return src(files.src.js)
+    .pipe(babel({
+      presets: ['@babel/env']
+    }))
     .pipe(uglify())
-    .pipe(dest('dist/js'))
-    .pipe(browserSync.stream());
+    .pipe(dest(files.dist.js));
 }
 
 function _nouglify() {
-  return src('src/js/*.js')
-    .pipe(dest('dist/js'))
-    .pipe(browserSync.stream());
+  cleanJS();
+  return src(files.src.js)
+    .pipe(dest(files.dist.js));
 }
-
 function _compress(){
-    return src('src/img/*')
+  cleanIMG();
+    return src(files.src.img)
         .pipe(imagemin())
-        .pipe(dest('dist/img'));
+        .pipe(dest(files.dist.img));
 }
 
-function _browserSync(){
-    browserSync.init({
+function serve(cb){
+    server.init({
         server: {
           baseDir: "./"
         }
     });
+    cb();
 }
 
-watch(['input/*.js'], (cb) => { _browserSync(); _scss(); _nouglify(); _compress();  cb();});
-// gulp.task('dev', gulp.parallel('browser-sync', 'scss', 'nouglify', 'compress'), function(){
-//   gulp.watch('src/sass/*.scss', gulp.series('scss'));
-//   gulp.watch('src/js/*.js', gulp.series('nouglify'));
-//   gulp.watch('src/img/*', gulp.series('compress'));
-//   gulp.watch("*.html").on('change', browserSync.reload);
-//   return;
-// });
+function _reload(cb){
+  server.reload();
+  cb();
+}
 
-// gulp.task('default', gulp.parallel('browser-sync', 'scss', 'uglify', 'compress'), function(){
-//     gulp.watch('src/sass/*.scss', gulp.series('scss'));
-//     gulp.watch('src/js/*.js', gulp.series('uglify'));
-//     gulp.watch('src/img/*', gulp.series('compress'));
-//     gulp.watch("*.html").on('change', browserSync.reload);
-//     return;
-//   });
+watch(['input/*.js'], (cb) => { serve(); _scss(); _nouglify(); _compress();  cb();});
   
-exports.browser_Sync = _browserSync;
-exports.scss = _scss;
-exports.nouglify = _nouglify;
-exports.uglify = _uglify;
-exports.compress = _compress;
-exports.default = parallel(_browserSync, _compress, _scss, _nouglify);
+function watchTask(){
+  watch(
+      [files.src.scss, files.src.js],
+      series(parallel(_scss, _nouglify), _reload)
+  );
+}
+  
+function watchImgs(){
+  watch(
+      [files.src.img],
+      series(_compress, _reload)
+  );
+}
+  
+function watchHTML(){
+  watch(
+      ['index.html'],
+      series(_reload)
+  );
+}
+
+exports.default = parallel(_scss, _uglify, _compress, serve);
+exports.dev = series(exports.default, parallel(watchTask, watchImgs, watchHTML));
+
+// exports.browser_Sync = serve;
+// exports.scss = _scss;
+// exports.nouglify = _nouglify;
+// exports.uglify = _uglify;
+// exports.compress = _compress;
+// exports.default = parallel(serve, _compress, _scss, _nouglify);
